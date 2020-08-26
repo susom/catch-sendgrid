@@ -1,0 +1,1 @@
+gcloud functions deploy addToCampaign --env-vars-file .env.yaml --entry-point app --runtime nodejs10 --trigger-http --allow-unauthenticated --region=us-west2
