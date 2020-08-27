@@ -4,8 +4,11 @@ var router = express.Router();
 
 //Middle ware that is specific to this router, log here
 router.use(function timeLog(req, res, next) {
-  console.log('Time: ', Date.now());
-  next();
+    res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header('Access-Control-Allow-Methods', 'PUT')
+    console.log('Time: ', Date.now());
+    next();
 });
 
 router.put("/contacts", async(req, res, next) => {
